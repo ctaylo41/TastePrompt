@@ -43,20 +43,30 @@ Then provide:
 
 Respond only in JSON, no preamble or markdown fences.`
 
+function compressProfile(profile) {
+  const fingerprint = profile.fingerprint ?? ''
+  const keywords = (profile.keywords ?? []).join(', ')
+  const analyses = profile.visual?.analyses ?? []
+  // Sample evenly across the full set — enough for signal, not enough to blow the token budget
+  const step = Math.max(1, Math.floor(analyses.length / 40))
+  const sampled = analyses.filter((_, i) => i % step === 0).slice(0, 40)
+  const signals = sampled
+    .map((a) => `[${a.mood}] ${a.aesthetic_signal} Tags: ${(a.tags ?? []).join(', ')}.`)
+    .join('\n')
+  return `FINGERPRINT:\n${fingerprint}\n\nKEYWORDS: ${keywords}\n\nIMAGE SIGNALS (${sampled.length} of ${analyses.length}):\n${signals}`
+}
+
 export const SINGLE_QUERY_PROMPT = (profile, query) => `You have deep knowledge of the following person's taste:
 
-${profile.fingerprint ?? '(no fingerprint yet — use the raw data below)'}
-
-Full taste data:
-${JSON.stringify(profile, null, 2)}
+${compressProfile(profile)}
 
 The user asks: ${query}
 
-Answer drawing on everything you know about this person's preferences. Be specific — recommend actual things (real restaurants, real albums, real films, real places). Don't hedge. If their profile suggests they'd love something, say so with confidence.`
+Answer drawing on everything you know about this person's aesthetic. Be specific — recommend actual things (real places, real objects, real references). Don't hedge.`
 
 export const MULTI_QUERY_PROMPT = (profiles, strategy, query, weights) => `You have taste profiles for multiple people:
 
-${profiles.map((p) => `## ${p.handle}\n${p.fingerprint ?? JSON.stringify(p, null, 2)}`).join('\n\n')}
+${profiles.map((p) => `## ${p.handle}\n${compressProfile(p)}`).join('\n\n')}
 
 Blend strategy: ${strategy}
 ${strategy === 'weighted' ? `Weights: ${JSON.stringify(weights)}` : ''}

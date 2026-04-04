@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import QueryInterface from './components/QueryInterface.jsx'
+import { subscribe, getUsagePerMinute } from './utils/tokenTracker.js'
 
 // Auto-load all JSON files from /profiles at build time
 const profileFiles = import.meta.glob('../profiles/*.json', { eager: true })
@@ -14,6 +15,10 @@ export default function App() {
   const [apiKey, setApiKey] = useState(() => localStorage.getItem('tastePrompt_apiKey') ?? '')
   const [apiKeyInput, setApiKeyInput] = useState('')
   const [profiles] = useState(BUNDLED_PROFILES)
+  const omdbKey = import.meta.env.VITE_OMDB_KEY ?? ''
+  const [tokensPerMin, setTokensPerMin] = useState(0)
+
+  useEffect(() => subscribe(setTokensPerMin), [])
 
   function handleSaveApiKey() {
     localStorage.setItem('tastePrompt_apiKey', apiKeyInput)
@@ -45,10 +50,28 @@ export default function App() {
     <div style={styles.app}>
       <header style={styles.header}>
         <span style={styles.logo}>tastePrompt</span>
+        <TokenMeter tokens={tokensPerMin} />
       </header>
       <main style={styles.main}>
-        <QueryInterface apiKey={apiKey} profiles={profiles} />
+        <QueryInterface apiKey={apiKey} omdbKey={omdbKey} profiles={profiles} />
       </main>
+    </div>
+  )
+}
+
+function TokenMeter({ tokens }) {
+  const LIMIT = 30_000
+  const pct = Math.min(tokens / LIMIT, 1)
+  const color = pct > 0.85 ? '#e06c6c' : pct > 0.6 ? '#c8a96e' : '#6ec88a'
+  if (tokens === 0) return null
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
+      <div style={{ width: 80, height: 4, background: '#2a2a2a', borderRadius: 2 }}>
+        <div style={{ width: `${pct * 100}%`, height: '100%', background: color, borderRadius: 2, transition: 'width 0.3s' }} />
+      </div>
+      <span style={{ fontSize: 11, color: '#888', fontFamily: 'monospace' }}>
+        {Math.round(tokens / 1000)}k / 30k /min
+      </span>
     </div>
   )
 }

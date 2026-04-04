@@ -4,26 +4,27 @@ import { streamSingleQuery, streamMultiQuery } from '../api/claude.js'
 const STRATEGIES = ['intersection', 'union', 'contrast']
 
 const SUGGESTED_SINGLE = [
-  'Plan my ideal Saturday from morning to night',
-  'What city in the world should I live in?',
-  'What would I put on my walls?',
-  'Recommend me 5 films I would love',
-  'Design my ideal living space',
-  'What restaurant fits this taste exactly?',
-  'What should I read next?',
+  "i'm starting a coffee brand and need help with the packaging, what colors, fonts, label style would feel right based on this taste?",
+  "going to tokyo for 3 days, plan me an itinerary that actually matches this vibe. cafes, shops, neighborhoods, not tourist stuff",
+  "just got a one bedroom in mile end and its empty, what furniture and lighting should i get that fits this aesthetic?",
+  "shooting instagram content for my clothing brand next week in london, give me a shot list. lighting, locations, styling, all of it",
+  "my friend's birthday is coming up and i never know what to get her, based on her profile what are some gifts under 100?",
 ]
 
 const SUGGESTED_MULTI = [
-  'Plan a dinner both of us would love',
-  'Where should we travel together?',
-  'What would one love that the other would hate?',
-  'Find a film we could both watch',
-  'What gift could they give each other?',
+  "i'm starting a coffee brand and need help with the packaging, what colors, fonts, label style would feel right based on both these taste profiles?",
+  "we're going to tokyo for 3 days, plan us an itinerary that actually matches both our vibes. cafes, shops, neighborhoods, not tourist stuff",
+  "we just got a place together and its empty, what furniture and lighting should we get that fits both our aesthetics?",
+  "shooting content for a clothing brand next week in london, give me a shot list that works for both these aesthetics. lighting, locations, styling, all of it",
+  "we need to get each other gifts under 100, what should each person get the other based on their profile?",
 ]
 
 const PRED_LABELS = { travel: 'Travel', restaurant: 'Dining', gift: 'Gift', architecture: 'Space' }
 
-export default function QueryInterface({ apiKey, profiles }) {
+// Module-level set — persists across StrictMode double-invocations
+const recsFetched = new Set()
+
+export default function QueryInterface({ apiKey, omdbKey, profiles }) {
   const handles = Object.keys(profiles)
 
   const [mode, setMode] = useState('single')
@@ -36,32 +37,61 @@ export default function QueryInterface({ apiKey, profiles }) {
   const [error, setError] = useState('')
   const [autoPreview, setAutoPreview] = useState('')
   const [autoStreaming, setAutoStreaming] = useState(false)
-  const [recs, setRecs] = useState('')
+  const [recs, setRecs] = useState([]) // [{label, title, subtitle, reason, image}]
   const [recsStreaming, setRecsStreaming] = useState(false)
 
   const responseRef = useRef(null)
   const prevBlendKey = useRef('')
-  const prevRecsHandle = useRef('')
+  const recsCancelled = useRef(false)
 
   const targetProfile = profiles[activeHandle]
   const predictions = targetProfile?.cross_domain_predictions ?? {}
 
   // Auto-generate recommendations when profile changes
   useEffect(() => {
-    if (mode !== 'single' || !targetProfile || activeHandle === prevRecsHandle.current) return
-    prevRecsHandle.current = activeHandle
-    setRecs('')
-    setRecsStreaming(true)
-    const prompt = `Based on this taste profile, give exactly 3 recommendations in this format:
-Film: [specific film title] — one sentence why
-Place: [specific city or neighbourhood] — one sentence why
-Dining: [specific type of restaurant or dish] — one sentence why
+    if (mode !== 'single' || !targetProfile || recsFetched.has(activeHandle)) return
+    recsFetched.add(activeHandle)
+    recsCancelled.current = true // cancel any in-flight request
+    setRecs([])
+    setRecsStreaming(false)
 
-Be very specific. No hedging.`
-    streamSingleQuery(apiKey, targetProfile, prompt, (chunk) => {
-      setRecs((p) => p + chunk)
-    }).finally(() => setRecsStreaming(false))
-  }, [activeHandle, mode])
+    recsCancelled.current = false
+    ;(async () => {
+    setRecsStreaming(true)
+
+    const prompt = `Based on this taste profile give exactly 3 recommendations in this exact format, nothing else:
+
+Movie: [Title] ([Year])
+Reason: [one sentence why]
+
+Album: [Album Title] by [Artist]
+Reason: [one sentence why]
+
+Book: [Title] by [Author]
+Reason: [one sentence why]
+
+Real titles only. Be specific.`
+
+    let buffer = ''
+    await new Promise((r) => setTimeout(r, 4000))
+    if (recsCancelled.current) return
+    try {
+      await streamSingleQuery(apiKey, targetProfile, prompt, (chunk) => { buffer += chunk }, { maxRetries: 0 })
+    } catch {
+      // rate limit — skip silently
+    } finally {
+      if (!recsCancelled.current) {
+        setRecsStreaming(false)
+        if (buffer) {
+          const parsed = parseRecs(buffer)
+          setRecs(parsed.map((r) => ({ ...r, image: null, imageLoading: true })))
+          const withImages = await Promise.all(parsed.map((r) => fetchArtwork(r, omdbKey)))
+          if (!recsCancelled.current) setRecs(withImages)
+        }
+      }
+    }
+    })()
+  }, [activeHandle])
 
   // Auto blend preview when 2+ profiles selected
   useEffect(() => {
@@ -249,10 +279,13 @@ Be very specific. No hedging.`
               )}
             </div>
 
-            {(recs || recsStreaming) && (
+            {(recs.length > 0 || recsStreaming) && (
               <div style={styles.sideBlock}>
                 <div style={styles.sideLabel}>Recommendations</div>
-                <FormattedRecs text={recs} streaming={recsStreaming} />
+                {recsStreaming
+                  ? <span style={styles.cursor}>▍</span>
+                  : <RecCards recs={recs} />
+                }
               </div>
             )}
           </>
@@ -331,8 +364,9 @@ function ProfileSearch({ handles, profiles, value, onSelect }) {
 
 function MultiProfileSearch({ handles, profiles, selected, onToggle }) {
   const [search, setSearch] = useState('')
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const ref = useRef(null)
+  const inputRef = useRef(null)
 
   const filtered = handles.filter((h) =>
     h.toLowerCase().includes(search.toLowerCase())
@@ -347,10 +381,11 @@ function MultiProfileSearch({ handles, profiles, selected, onToggle }) {
   }, [])
 
   return (
-    <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-      <div style={styles.searchBox} onClick={() => setOpen(true)}>
+    <div ref={ref} style={{ display: 'flex', flexDirection: 'column', gap: 8, position: 'relative' }}>
+      <div style={styles.searchBox} onClick={() => { setOpen(true); inputRef.current?.focus() }}>
         <span style={styles.searchIcon}>⌕</span>
         <input
+          ref={inputRef}
           style={styles.searchInput}
           placeholder="Search profiles to mix…"
           value={search}
@@ -358,7 +393,7 @@ function MultiProfileSearch({ handles, profiles, selected, onToggle }) {
           onFocus={() => setOpen(true)}
         />
       </div>
-      {open && filtered.length > 0 && (
+      {open && (
         <div style={styles.dropdown}>
           {filtered.map((h) => (
             <button
@@ -368,7 +403,7 @@ function MultiProfileSearch({ handles, profiles, selected, onToggle }) {
             >
               <span>{profiles[h].handle}</span>
               <span style={styles.dropdownMeta}>
-                {selected.includes(h) ? '✓ selected' : `${profiles[h].visual?.analyses?.length ?? 0} images`}
+                {selected.includes(h) ? '✓' : `${profiles[h].visual?.analyses?.length ?? 0} images`}
               </span>
             </button>
           ))}
@@ -388,34 +423,72 @@ function MultiProfileSearch({ handles, profiles, selected, onToggle }) {
   )
 }
 
-function FormattedRecs({ text, streaming }) {
-  const KNOWN_LABELS = ['film', 'place', 'dining', 'travel', 'restaurant', 'book', 'music']
-  const lines = text.split('\n').filter((l) => l.trim())
-  const cards = lines.filter((line) => {
-    const colonIdx = line.indexOf(':')
-    if (colonIdx === -1) return false
-    const label = line.slice(0, colonIdx).trim().toLowerCase()
-    return KNOWN_LABELS.some((k) => label.includes(k))
-  })
+function parseRecs(text) {
+  const results = []
+  const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
+  let current = null
+  for (const line of lines) {
+    const movieMatch = line.match(/^Movie:\s*(.+)/i)
+    const albumMatch = line.match(/^Album:\s*(.+)/i)
+    const bookMatch = line.match(/^Book:\s*(.+)/i)
+    const reasonMatch = line.match(/^Reason:\s*(.+)/i)
+    if (movieMatch) { current = { label: 'Movie', title: movieMatch[1].trim(), reason: '', type: 'movie' }; results.push(current) }
+    else if (albumMatch) { current = { label: 'Album', title: albumMatch[1].trim(), reason: '', type: 'album' }; results.push(current) }
+    else if (bookMatch) { current = { label: 'Book', title: bookMatch[1].trim(), reason: '', type: 'book' }; results.push(current) }
+    else if (reasonMatch && current) { current.reason = reasonMatch[1].trim() }
+  }
+  return results
+}
 
+async function fetchArtwork(rec, omdbKey) {
+  try {
+    if (rec.type === 'movie') {
+      if (!omdbKey) return { ...rec, image: null, imageLoading: false }
+      // Strip year from title if present e.g. "The Godfather (1972)"
+      const titleOnly = rec.title.replace(/\s*\(\d{4}\)$/, '').trim()
+      const res = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(titleOnly)}&apikey=${omdbKey}`)
+      const data = await res.json()
+      const image = data.Poster && data.Poster !== 'N/A' ? data.Poster : null
+      return { ...rec, image, imageLoading: false }
+    }
+    if (rec.type === 'album') {
+      const query = rec.title // already "Album by Artist"
+      const res = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&media=music&entity=album&limit=1`)
+      const data = await res.json()
+      const item = data.results?.[0]
+      const image = item?.artworkUrl100?.replace('100x100bb', '600x600bb') ?? null
+      return { ...rec, image, imageLoading: false }
+    }
+    if (rec.type === 'book') {
+      const res = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(rec.title)}&limit=1&fields=cover_i`)
+      const data = await res.json()
+      const coverId = data.docs?.[0]?.cover_i
+      const image = coverId ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg` : null
+      return { ...rec, image, imageLoading: false }
+    }
+  } catch {}
+  return { ...rec, image: null, imageLoading: false }
+}
+
+function RecCards({ recs }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-      {cards.map((line, i) => {
-        const colonIdx = line.indexOf(':')
-        const label = line.slice(0, colonIdx).trim()
-        const rest = line.slice(colonIdx + 1).trim()
-        const dashIdx = rest.indexOf('—')
-        const title = dashIdx !== -1 ? rest.slice(0, dashIdx).trim() : rest
-        const reason = dashIdx !== -1 ? rest.slice(dashIdx + 1).trim() : ''
-        return (
-          <div key={i} style={styles.recCard}>
-            <span style={styles.recLabel}>{label}</span>
-            <span style={styles.recTitle}>{title}</span>
-            {reason && <span style={styles.recReason}>{reason}</span>}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      {recs.map((rec, i) => (
+        <div key={i} style={styles.recCard}>
+          {rec.image ? (
+            <img src={rec.image} alt={rec.title} style={styles.recImage} />
+          ) : rec.imageLoading ? (
+            <div style={styles.recImagePlaceholder} />
+          ) : (
+            <div style={{ ...styles.recImagePlaceholder, background: 'var(--bg)' }} />
+          )}
+          <div style={styles.recInfo}>
+            <span style={styles.recLabel}>{rec.label}</span>
+            <span style={styles.recTitle}>{rec.title}</span>
+            <span style={styles.recReason}>{rec.reason}</span>
           </div>
-        )
-      })}
-      {streaming && cards.length === 0 && <span style={styles.cursor}>▍</span>}
+        </div>
+      ))}
     </div>
   )
 }
@@ -552,11 +625,13 @@ const styles = {
   predKey: { fontSize: 11, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--muted)' },
   predVal: { fontSize: 14, lineHeight: 1.5, color: 'var(--text)' },
 
-  recCard: { display: 'flex', flexDirection: 'column', gap: 3 },
+  recCard: { display: 'flex', gap: 12, alignItems: 'flex-start' },
+  recImage: { width: 64, height: 64, borderRadius: 6, objectFit: 'cover', flexShrink: 0 },
+  recImagePlaceholder: { width: 64, height: 64, borderRadius: 6, background: 'var(--border)', flexShrink: 0 },
+  recInfo: { display: 'flex', flexDirection: 'column', gap: 3, flex: 1, minWidth: 0 },
   recLabel: { fontSize: 10, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--accent)' },
-  recTitle: { fontSize: 14, color: 'var(--text)', fontWeight: 500 },
-  recReason: { fontSize: 13, color: 'var(--muted)', lineHeight: 1.5 },
-  recLine: { fontSize: 14, color: 'var(--text)', lineHeight: 1.6 },
+  recTitle: { fontSize: 13, color: 'var(--text)', fontWeight: 500, lineHeight: 1.4 },
+  recReason: { fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 },
   autoText: { fontSize: 14, lineHeight: 1.8, fontStyle: 'italic', color: '#ccc' },
   hint: { fontSize: 13, color: 'var(--muted)', fontStyle: 'italic' },
 
