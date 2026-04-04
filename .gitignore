@@ -1,0 +1,10 @@
+node_modules/
+dist/
+images/
+
+# env
+.env
+.env.local
+
+# OS
+.DS_Store
