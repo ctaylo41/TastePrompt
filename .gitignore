@@ -1,6 +1,7 @@
 node_modules/
 dist/
 images/
+gallery-dl/
 
 # env
 .env
@@ -8,3 +9,4 @@ images/
 
 # OS
 .DS_Store
+

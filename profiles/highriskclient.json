@@ -1,0 +1,383 @@
+{
+  "handle": "highriskclient",
+  "created_at": "2026-04-04T16:32:25.002Z",
+  "updated_at": "2026-04-04T16:35:37.302Z",
+  "visual": {
+    "analyses": [
+      {
+        "palette": [
+          "#2B2B2B",
+          "#F5F5F0",
+          "#C41E3A",
+          "#8B7355",
+          "#4A4A4A"
+        ],
+        "mood": "Dynamic urban movement",
+        "composition": "Low angle ground-level perspective capturing legs in motion, creating diagonal movement across frame with weathered concrete steps as leading lines",
+        "lighting": "Bright natural daylight casting soft shadows, even illumination with slight overcast quality",
+        "texture": "Rough concrete with visible wear patterns and staining, smooth athletic fabric with geometric striping, matte rubber boot sole",
+        "influences": [
+          "Street photography",
+          "Athletic wear advertising",
+          "Urban documentary style"
+        ],
+        "subject_matter": "Person climbing concrete steps wearing white track pants with red racing stripes and dark boots",
+        "tags": [
+          "athletic wear",
+          "concrete steps",
+          "racing stripes",
+          "urban climbing",
+          "motion blur",
+          "street level",
+          "weathered surfaces",
+          "diagonal composition"
+        ],
+        "aesthetic_signal": "Choosing this image signals appreciation for authentic urban athleticism and the intersection of functional sportswear with gritty city environments.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164606691173_01.jpg"
+      },
+      {
+        "palette": [
+          "#2C2C2C",
+          "#F5F5F0",
+          "#1A1A1A",
+          "#E8E8E8",
+          "#404040"
+        ],
+        "mood": "Sophisticated melancholy",
+        "composition": "Three-quarter seated pose with asymmetrical framing, subject leaning forward creating intimate proximity",
+        "lighting": "Soft directional light from upper left, creating gentle shadows on right side of face and subtle modeling",
+        "texture": "Smooth fabric surfaces contrasting with subtle film grain, crisp shirt details against softer suit material",
+        "influences": [
+          "1990s Hollywood portraiture",
+          "Classic menswear photography",
+          "Editorial fashion styling"
+        ],
+        "subject_matter": "Professional portrait of man in formal black suit and white dress shirt in contemplative pose",
+        "tags": [
+          "formal wear",
+          "portrait photography",
+          "monochromatic",
+          "professional",
+          "contemplative",
+          "classic styling",
+          "studio lighting",
+          "editorial"
+        ],
+        "aesthetic_signal": "Choosing this image signals appreciation for timeless masculine elegance and the kind of polished, understated sophistication that prioritizes craft over flash.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164653958088_01.jpg"
+      },
+      {
+        "palette": [
+          "#000000",
+          "#F5E6A3",
+          "#2A2A2A"
+        ],
+        "mood": "Dark philosophical contemplation",
+        "composition": "Centered typography with large inverted text dominating upper two-thirds, small italicized subtitle below",
+        "lighting": "High contrast with stark light text against pure black void",
+        "texture": "Clean digital typography with subtle cream-colored lettering against matte black",
+        "influences": [
+          "French New Wave film titles",
+          "Existentialist literature covers",
+          "Art house cinema end credits"
+        ],
+        "subject_matter": "Reversed French text reading 'LE TEMPS DÉTRUIT TOUT' with English translation 'Time destroys all things'",
+        "tags": [
+          "minimalist",
+          "existential",
+          "French",
+          "typography",
+          "philosophy",
+          "mortality",
+          "art house",
+          "contemplative"
+        ],
+        "aesthetic_signal": "Choosing this reveals appreciation for philosophical depth, foreign art cinema, and the beauty found in stark, contemplative statements about mortality.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164725378518_01.jpg"
+      },
+      {
+        "palette": [
+          "#1a1a1a",
+          "#f5f5f5",
+          "#8b0000",
+          "#4a4a4a",
+          "#e8e8e8"
+        ],
+        "mood": "violent tactical precision",
+        "composition": "silhouetted figure centered against stark white background with numbered zones creating clinical diagram aesthetic",
+        "lighting": "high contrast with no gradation, pure silhouette treatment against bright white",
+        "texture": "smooth vector-like illustration with sharp edges and clean blood splatter effects",
+        "influences": [
+          "shooting range targets",
+          "military training materials",
+          "forensic diagrams",
+          "action movie poster design"
+        ],
+        "subject_matter": "human silhouette target with numbered body zones showing bullet wounds and blood spatter from handgun",
+        "tags": [
+          "target practice",
+          "tactical",
+          "violence",
+          "numbered zones",
+          "silhouette",
+          "blood effects",
+          "weapon training",
+          "stark contrast"
+        ],
+        "aesthetic_signal": "Choosing this reveals an attraction to militaristic precision and clinical violence presentation that aestheticizes tactical training culture.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164725393308_01.jpg"
+      },
+      {
+        "palette": [
+          "#f5f5f5",
+          "#2a2a2a",
+          "#8a8a8a",
+          "#1a1a1a",
+          "#d4d4d4"
+        ],
+        "mood": "minimalist luxury sophistication",
+        "composition": "tight crop on torso and face, asymmetrical balance with figure positioned left of center, low angle perspective emphasizing jawline and sunglasses",
+        "lighting": "soft, diffused natural light creating gentle shadows on the neck and collarbone, cool temperature",
+        "texture": "smooth skin contrasted with grainy film quality, clean geometric lines of the sunglasses frame",
+        "influences": [
+          "1970s fashion photography",
+          "Italian luxury advertising",
+          "modernist portrait photography"
+        ],
+        "subject_matter": "shirtless bald male model wearing oversized wraparound sunglasses in black and white luxury fashion advertisement for Gucci",
+        "tags": [
+          "luxury fashion",
+          "monochrome",
+          "minimalist",
+          "geometric sunglasses",
+          "editorial photography",
+          "Italian design",
+          "masculine beauty",
+          "high fashion"
+        ],
+        "aesthetic_signal": "This choice reveals appreciation for understated luxury that prioritizes clean lines, sophisticated restraint, and the power of negative space over flashy excess.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164959452618_01.jpg"
+      },
+      {
+        "palette": [
+          "#2B4F8C",
+          "#1A1A1A",
+          "#5A5A5A",
+          "#D4CFC4",
+          "#8B9DC3"
+        ],
+        "mood": "intimate melancholic togetherness",
+        "composition": "rear three-quarter view capturing two figures walking away, centered and balanced with architectural framing creating depth",
+        "lighting": "soft diffused evening light with cool blue undertones creating gentle shadows",
+        "texture": "smooth concrete pavement contrasting with puffy nylon jacket surfaces and weathered building materials",
+        "influences": [
+          "street photography",
+          "documentary realism",
+          "Wong Kar-wai cinematography"
+        ],
+        "subject_matter": "two people in blue and dark jackets walking together with arms around each other's shoulders",
+        "tags": [
+          "companionship",
+          "urban_evening",
+          "blue_jackets",
+          "walking_away",
+          "concrete",
+          "intimate_gesture",
+          "street_scene",
+          "melancholic"
+        ],
+        "aesthetic_signal": "Choosing this image reveals an appreciation for quiet human moments and cinematic street photography that captures intimacy within urban solitude.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_165025783238_01.jpg"
+      },
+      {
+        "palette": [
+          "#f5f5f5",
+          "#2c2c2c",
+          "#808080",
+          "#e8e8e8"
+        ],
+        "mood": "nostalgic documentary rawness",
+        "composition": "Two black and white photographs mounted on white wall, asymmetrical placement with larger image left, smaller right",
+        "lighting": "Even, diffused gallery lighting creating subtle shadows behind mounted prints",
+        "texture": "Matte photographic paper against smooth painted wall surface, visible tape securing larger print",
+        "influences": [
+          "Street photography",
+          "Eastern European documentary photography",
+          "working class portraiture"
+        ],
+        "subject_matter": "Gallery wall display of vintage black and white photographs showing people in tracksuits and casual interaction scenes",
+        "tags": [
+          "black and white photography",
+          "gallery wall",
+          "documentary style",
+          "vintage prints",
+          "street photography",
+          "working class subjects",
+          "casual mounting",
+          "archival display"
+        ],
+        "aesthetic_signal": "Choosing this reveals appreciation for unvarnished documentary photography and the elevated presentation of vernacular or working-class imagery in gallery contexts.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_165106570218_01.jpg"
+      },
+      {
+        "palette": [
+          "#4A7BA7",
+          "#D4A574",
+          "#8B4513",
+          "#F5DEB3",
+          "#2F4F4F"
+        ],
+        "mood": "Contemplative oceanic solitude",
+        "composition": "Close-up profile shot with shallow depth of field, ocean horizon creating horizontal balance in background",
+        "lighting": "Soft natural daylight from left side, creating gentle shadows and highlighting skin texture",
+        "texture": "Smooth wet skin with visible water droplets, fine film grain quality",
+        "influences": [
+          "Coming-of-age cinema",
+          "Moonlight film aesthetic",
+          "Contemporary art photography"
+        ],
+        "subject_matter": "Young Black man in profile by ocean, appears to be emerging from or near water",
+        "tags": [
+          "ocean",
+          "portrait",
+          "contemplative",
+          "cinematic",
+          "water",
+          "profile",
+          "natural light",
+          "intimate"
+        ],
+        "aesthetic_signal": "This choice reveals an appreciation for emotionally resonant, artistically crafted imagery that prioritizes human vulnerability and cinematic storytelling over conventional beauty standards.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164741456673_01.png"
+      },
+      {
+        "palette": [
+          "#87CEEB",
+          "#D4A574",
+          "#F4C2A1",
+          "#2F4F4F",
+          "#E6D3C1"
+        ],
+        "mood": "contemplative oceanic serenity",
+        "composition": "close-up profile shot with subject positioned left, ocean horizon creating natural thirds division",
+        "lighting": "soft natural daylight from front-left, creating gentle shadows on right side of face",
+        "texture": "smooth skin surface with subtle facial hair stubble, contrasted against soft-focus water",
+        "influences": [
+          "Mediterranean cinema",
+          "fashion photography",
+          "romantic realism"
+        ],
+        "subject_matter": "shirtless bald man in profile gazing toward ocean horizon",
+        "tags": [
+          "profile",
+          "ocean",
+          "contemplative",
+          "masculine",
+          "serene",
+          "cinematic",
+          "natural lighting",
+          "horizon"
+        ],
+        "aesthetic_signal": "This choice reveals an appreciation for cinematic masculinity that emphasizes introspection and natural beauty over aggression or posturing.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164741456673_02.png"
+      },
+      {
+        "palette": [
+          "#87CEEB",
+          "#D4A574",
+          "#2B4F72",
+          "#F4C2A1",
+          "#1A365D"
+        ],
+        "mood": "Contemplative ocean solitude",
+        "composition": "Close-up portrait with subject positioned left of center, ocean horizon creating strong horizontal line in background depth",
+        "lighting": "Bright natural daylight from above and front, creating subtle shadows under brow and chin",
+        "texture": "Smooth skin with visible pores and natural imperfections, contrasted against soft-focus water surface",
+        "influences": [
+          "Contemporary cinema portraiture",
+          "Naturalist photography"
+        ],
+        "subject_matter": "Shirtless man with buzzed hair gazing pensively toward ocean horizon",
+        "tags": [
+          "ocean",
+          "portrait",
+          "contemplative",
+          "natural lighting",
+          "masculine",
+          "horizon",
+          "close-up",
+          "cinematic"
+        ],
+        "aesthetic_signal": "This choice reveals preference for authentic, unguarded masculine vulnerability captured in natural settings with cinematic quality.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164741456673_03.png"
+      },
+      {
+        "palette": [
+          "#2B2B2B",
+          "#4A90E2",
+          "#F5F5DC",
+          "#1A1A1A",
+          "#8B9DC3"
+        ],
+        "mood": "Nostalgic casual cool",
+        "composition": "Low angle shot with subject positioned on diagonal, creating dynamic asymmetry against plain backdrop",
+        "lighting": "Soft, diffused natural light from front-left, creating gentle shadows and even skin tones",
+        "texture": "Smooth matte finish with slight grain, reminiscent of film photography or vintage processing",
+        "influences": [
+          "90s teen magazines",
+          "Casual sportswear campaigns",
+          "Alternative music press photography"
+        ],
+        "subject_matter": "Young woman in casual 90s-style outfit with bucket hat, cropped athletic top, and jeans in relaxed pose",
+        "tags": [
+          "90s fashion",
+          "bucket hat",
+          "denim",
+          "athletic wear",
+          "casual portrait",
+          "vintage aesthetic",
+          "youth culture",
+          "relaxed styling"
+        ],
+        "aesthetic_signal": "This reveals someone who values nostalgic authenticity over polished perfection, drawn to unpretentious style that references specific cultural moments.",
+        "source": "uploaded_image",
+        "filename": "tumblr_highriskclient_164774083458_01.png"
+      }
+    ]
+  },
+  "text_preferences": {
+    "food": {
+      "values": [],
+      "notes": ""
+    },
+    "fashion": {
+      "values": [],
+      "notes": ""
+    },
+    "books": {
+      "values": [],
+      "notes": ""
+    },
+    "film": {
+      "values": [],
+      "notes": ""
+    },
+    "spaces": {
+      "values": [],
+      "notes": ""
+    }
+  },
+  "fingerprint": "",
+  "keywords": [],
+  "cross_domain_predictions": {}
+}

@@ -12,6 +12,7 @@
 import fs from 'fs'
 import path from 'path'
 import https from 'https'
+import sharp from 'sharp'
 
 const [, , imagesDir, apiKey, handle, outFile] = process.argv
 
@@ -27,6 +28,7 @@ fs.mkdirSync(path.dirname(outputFile), { recursive: true })
 const MODEL = 'claude-sonnet-4-20250514'
 const CONCURRENCY = 1 // sequential to stay under free tier rate limits
 const DELAY_MS = 8000 // 8s between calls to stay under 30k tokens/min
+const RETRY_DELAY_MS = 20000 // wait 20s on rate limit error before retrying
 const SUPPORTED = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp'])
 
 const IMAGE_ANALYSIS_PROMPT = `Analyze this image as a data point in someone's taste profile. Extract the following as JSON:
@@ -111,10 +113,25 @@ function getMimeType(ext) {
   return { '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.gif': 'image/gif', '.webp': 'image/webp' }[ext] ?? 'image/jpeg'
 }
 
+async function prepareImage(filepath) {
+  const MAX_BYTES = 4.5 * 1024 * 1024
+  const MAX_PX = 1568
+
+  const buffer = await sharp(fs.readFileSync(filepath))
+    .resize(MAX_PX, MAX_PX, { fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 85 })
+    .toBuffer()
+
+  // If conversion made it larger somehow, warn but still use it
+  if (buffer.length > MAX_BYTES) {
+    process.stdout.write(`  [warn] ${path.basename(filepath)} still ${(buffer.length / 1024 / 1024).toFixed(1)}MB after resize\n`)
+  }
+
+  return { base64: buffer.toString('base64'), mimeType: 'image/jpeg' }
+}
+
 async function analyzeImage(filepath) {
-  const ext = path.extname(filepath).toLowerCase()
-  const base64 = fs.readFileSync(filepath).toString('base64')
-  const mimeType = getMimeType(ext)
+  const { base64, mimeType } = await prepareImage(filepath)
 
   const response = await claudeRequest({
     model: MODEL,
@@ -172,19 +189,31 @@ async function run() {
 
     const tasks = pending.map((filename) => async () => {
       const filepath = path.join(imagesDir, filename)
-      try {
-        const result = await analyzeImage(filepath)
+      let result = null
+      let attempts = 0
+      while (!result && attempts < 3) {
+        try {
+          result = await analyzeImage(filepath)
+        } catch (e) {
+          attempts++
+          const isRateLimit = e.message.includes('rate limit') || e.message.includes('529')
+          if (isRateLimit && attempts < 3) {
+            process.stdout.write(`  [rate limit] waiting ${RETRY_DELAY_MS / 1000}s before retry…\n`)
+            await new Promise((r) => setTimeout(r, RETRY_DELAY_MS))
+          } else {
+            done++
+            process.stdout.write(`  [${done}/${pending.length}] ✗ ${filename} (${e.message})\n`)
+            break
+          }
+        }
+      }
+      if (result) {
         analyses.push(result)
         done++
         process.stdout.write(`  [${done}/${pending.length}] ✓ ${filename} — ${result.mood}\n`)
-
-        // Save progress after each image
         const partial = buildProfile(analyses, existing)
         fs.writeFileSync(outputFile, JSON.stringify(partial, null, 2))
         await new Promise((r) => setTimeout(r, DELAY_MS))
-      } catch (e) {
-        done++
-        process.stdout.write(`  [${done}/${pending.length}] ✗ ${filename} (${e.message})\n`)
       }
     })
 
