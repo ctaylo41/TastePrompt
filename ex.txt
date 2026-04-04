@@ -1,0 +1,404 @@
+
+highriskclient
+# Product Photoshoot Direction for AI Note Taker App
+
+## COMPOSITION STYLES
+Off-center subjects with negative space - Place users in lower third or side of frame, letting empty space suggest contemplation
+Architectural framing - Use doorways, windows, concrete overhangs to create geometric frames around subjects
+Profile shots and averted gazes - Avoid direct eye contact; capture users looking down at device or gazing thoughtfully away
+Bird's eye view angles - Overhead shots of hands interacting with device on clean surfaces
+Intimate close-ups with shallow depth - Focus on hands, partial faces, device screens with heavy background blur
+Diagonal lines and urban geometry - Use stairs, railings, building edges to create dynamic leading lines
+## LIGHTING
+Overcast window light - Soft, diffused natural light through large windows on cloudy days
+Golden hour side lighting - Warm, low-angle sun creating dramatic shadows and highlighting device screens
+Harsh architectural shadows - Strong directional light creating geometric shadow patterns on subjects
+Moody tungsten interiors - Warm indoor lighting mixed with cool daylight for color temperature contrast
+Single key light setups - Dramatic studio lighting with strong shadows, minimal fill
+Reflected light off concrete/marble - Using urban surfaces to bounce soft, cool-toned illumination
+## CAMERA & TECHNIQUE
+Leica M-series or Fujifilm X-Pro - Rangefinder aesthetic with subtle film emulation
+Shoot on Kodak Portra 400 or Tri-X - Actual film for authentic grain and color rendition
+50mm and 35mm focal lengths - Classical documentary focal lengths, avoid wide or telephoto extremes
+Square format crops - 1:1 aspect ratio referencing medium format film photography
+Intentional motion blur - Slow shutter speeds capturing movement and gesture
+High contrast black & white processing - Push shadows deep, keep highlights clean
+## LOCATIONS
+Tadao Ando-inspired concrete spaces - Minimalist concrete interiors with clean geometric lines
+Empty museum galleries - White walls, polished concrete floors, dramatic ceiling height
+Brutalist university libraries - Raw concrete, repetitive architectural elements, study carrels
+Modern office building lobbies - Marble surfaces, floor-to-ceiling windows, minimal furnishing
+Rooftop terraces with city views - Urban skylines as backdrop, concrete planters, metal railings
+Underground parking garages - Fluorescent lighting, concrete columns, geometric repetition
+Empty subway platforms - Clean modernist transit architecture, tile walls, metal benches
+## CLOTHING
+Lemaire oversized wool coats - Architectural silhouettes in camel, charcoal, or olive
+Uniqlo U basics - Clean cotton turtlenecks in cream, black, or muted earth tones
+Acne Studios tailoring - Minimalist blazers and trousers with subtle construction details
+COS knitwear - Structured sweaters in neutral palettes, interesting texture without decoration
+Norse Projects outerwear - Technical minimalism, clean lines, muted color blocking
+Vintage Helmut Lang pieces - 90s minimalist precision, monochromatic palettes
+Accessories: Wire-frame glasses, simple leather goods, analog watches (Braun, Uniform Wares)
+Color palette: Black, white, cream, charcoal, olive, camel - avoid bright colors or busy patterns
+## MOOD DIRECTION Capture users in moments of genuine contemplation - looking thoughtful while taking notes, pausing mid-thought, or reviewing captured ideas. The app should feel like a sophisticated tool for serious thinkers, not a casual consumer product. Think "architect reviewing blueprints" rather than "student cramming for exams."
+
+whoisnoahdillon
+# PRODUCT PHOTOSHOOT DIRECTION
+
+## COMPOSITION STYLES
+
+Liminal Documentation Style
+Off-center framing with subjects positioned in negative space
+Capture app usage during transitional moments (waiting in lobbies, empty offices after hours)
+Use reflective surfaces (windows, phone screens, mirrors) to create layered compositions
+Frame shots through doorways, under stairwells, or in corner spaces
+Intimate Surveillance Aesthetic
+Close crops on hands holding phones with harsh flash falloff
+Over-the-shoulder shots showing partial app interface with user's environment bleeding in
+Mirror selfie compositions where the app is visible but secondary to the mood
+Document actual workflow interruptions - note-taking during real conversations
+## LIGHTING
+
+Clinical Flash Photography
+Direct on-camera flash creating harsh shadows and overexposed foregrounds
+Fluorescent office lighting mixed with phone screen glow
+Golden hour window light cutting through sterile interior spaces
+Sodium vapor street lighting for nighttime usage scenarios
+Analog Film Grain Quality
+Shoot with actual film or heavy grain simulation
+Push film/digital to create authentic texture and imperfection
+Use available light sources rather than professional lighting setups
+## CAMERA APPROACH
+
+Kodak Portra 400 pushed to 800 for grain and color cast Contax T3 or similar point-and-shoot for authentic flash aesthetic If digital: Ricoh GR III for that clinical documentation feel iPhone with flash for genuine social media documentation style
+
+Avoid: Professional DSLRs, perfect focus, color correction
+
+## LOCATIONS
+
+West Campus Study Spaces - Empty university library corners at 2am 24-hour Laundromats - Fluorescent-lit waiting while clothes wash Hospital Waiting Areas - Institutional seating with overhead lighting Hotel Business Centers - Beige corporate spaces with outdated computers Empty Office Buildings - After-hours access to generic corporate floors Transit Spaces - Airport gate seating, subway platform benches Parking Garages - Concrete brutalist architecture with security lighting
+
+## CLOTHING
+
+User 1: Conceptual Minimalism
+Vintage Nebraska crewneck (faded)
+Baggy jeans with visible wear
+White New Balance 991s
+No accessories - authentic casualness
+User 2: Clinical Femininity
+White cotton t-shirt with barely-visible text
+High-waisted trousers in neutral tone
+Minimal silver jewelry
+Hair pulled back functionally, not stylistically
+User 3: Underground Professional
+Black Dickies work pants
+Oversized blazer over fitted tee
+Doc Martens or similar chunky shoe
+One statement piece (interesting bag or vintage accessory)
+User 4: Y2K Academic
+Fitted long-sleeve with small graphic/logo
+Low-rise denim or cargo pants
+Chunky sneakers (Osiris, early 2000s Adidas)
+Wire-frame glasses or sunglasses worn indoors
+## MOOD DIRECTION
+
+Capture actual app usage, not performed usage. Show people genuinely taking notes during:
+Late-night study sessions
+Waiting for delayed flights
+During actual phone calls
+In institutional waiting rooms
+The app should feel like a tool for people who exist in liminal spaces - the note-taker for underground creatives, night shift workers, and anyone documenting life at society's edges.
+
+witchesandslippersandhoods
+# PRODUCT SHOOT AESTHETIC GUIDE
+
+## COMPOSITION STYLES
+
+Primary Style: Editorial Minimalism with Tactile Elements
+Frame subjects in contemplative, slightly melancholic poses - looking away from camera, absorbed in thought
+Use asymmetrical compositions with negative space to create intellectual breathing room
+Layer analog textures (papers, books, fabric) around digital interface to show cultural collision
+Shoot through objects: vintage glass, architectural elements, natural materials
+Create diptychs showing both the digital interface and the user's physical environment
+Use Dutch angles and unconventional cropping inspired by avant-garde fashion photography
+Secondary Style: Liminal Space Documentation
+Capture transitional moments - user pausing mid-thought, stylus hovering over screen
+Show hands in intimate detail interacting with technology
+Frame the app within larger environmental context that feels atmospheric and moody
+## LIGHTING
+
+Golden Hour Melancholy
+Soft, directional window light during overcast conditions
+Warm tungsten practicals mixed with cool daylight for emotional depth
+Dramatic chiaroscuro inspired by Renaissance painting techniques
+Hazy, diffused light through sheer curtains or frosted glass
+Backlighting that creates silhouettes and rim lighting on subjects
+Avoid harsh digital-looking LED setups - everything should feel analog and warm
+Specific Setup:
+Key light: Large softbox positioned 45 degrees off-camera
+Fill: Bounce card with warm gel
+Practical lights: Vintage desk lamps, candles, warm Edison bulbs
+## CAMERA & TECHNICAL SPECS
+
+Camera: Film or Film-Emulated Digital
+Shoot on 35mm film (Kodak Portra 400 or Fuji 400H) for authentic grain
+If digital: Sony A7R IV with film emulation LUTs in post
+Medium format film (Mamiya RZ67) for hero shots requiring maximum detail
+Lenses:
+50mm f/1.4 for intimate, natural perspective
+85mm f/1.8 for compressed, dreamy portraits
+24mm f/2.8 for environmental context shots
+Technical Approach:
+Shoot wide open (f/1.4-f/2.8) for shallow depth of field
+Embrace slight motion blur and imperfection
+Film grain is essential - never clinical digital sharpness
+## LOCATIONS
+
+Primary Locations:
+
+1. Brutalist Architecture Interiors
+Barbican Centre conservatory, London
+Getty Center reading rooms, Los Angeles
+Local university libraries with concrete and natural light
+2. Historic European-Style Cafés
+Café Central, Vienna aesthetic
+Old libraries converted to cafés
+Spaces with ornate details, worn leather, brass fixtures
+3. Artist Studios/Creative Spaces
+Cluttered maximalist studios with books, vintage objects
+Converted industrial lofts with large windows
+Spaces that feel lived-in, intellectual, slightly melancholic
+4. Transitional Outdoor Spaces
+Covered arcades and porticoes
+Museum courtyards
+Monastery cloisters or university quads
+Anywhere that bridges interior/exterior
+## CLOTHING & STYLING
+
+Color Palette:
+Burgundy, deep forest green, navy, cream, camel
+Avoid bright colors, neon, or obviously tech-branded clothing
+Embrace earth tones and muted jewel tones
+Key Pieces:
+
+For Men:
+Unstructured wool blazers in tweedy textures
+Vintage band t-shirts under cardigans
+Wide-wale corduroy pants in rust or olive
+Chunky knit turtlenecks
+Worn leather shoes (oxfords, desert boots)
+Vintage eyewear frames
+For Women:
+Oversized vintage blazers with ornate buttons
+Silk blouses in muted florals
+High-waisted wide-leg trousers
+Midi skirts in rich fabrics (velvet, brocade)
+Delicate gold jewelry (chains, vintage rings)
+Hair in romantic braids or messy buns
+Accessories:
+Vintage leather bags and satchels
+Analog watches with leather straps
+Books as props (poetry, philosophy, art history)
+Vintage fountain pens
+Ceramic coffee mugs, never branded disposable cups
+Fresh flowers (muted colors, slightly wilted for authenticity)
+Styling Notes:
+Everything should look effortlessly intellectual
+Avoid anything that screams "tech startup"
+Embrace slight imperfection - wrinkled fabrics, lived-in textures
+Layer textures: wool over silk, leather over cotton
+Think art student meets Renaissance luxury
+This approach positions your app as a tool for thoughtful, creative intellectuals rather than typical productivity-focused tech users.
+
+wordsforyoungmen
+# PRODUCT PHOTO SHOOT AESTHETIC GUIDE
+
+## COMPOSITION STYLES
+
+Documentary Intimacy Approach
+Shoot from slightly elevated angles capturing users in natural, unguarded moments
+Use tight crops showing hands interacting with phones, emphasizing tactile connection
+Frame subjects through doorways, windows, or architectural elements for voyeuristic authenticity
+Employ asymmetrical compositions with subjects positioned in rule-of-thirds placement
+Include environmental storytelling elements (coffee rings, worn notebooks, vintage objects)
+Cinematic Portrait Style
+Medium shots showing torso and hands, reminiscent of 1990s editorial photography
+Use negative space to create contemplative mood
+Layer subjects against textured backgrounds (exposed brick, weathered concrete)
+Employ shallow depth of field to isolate subjects from busy backgrounds
+## LIGHTING
+
+Golden Hour Documentary
+Shoot during late afternoon with warm, directional window light
+Use practical lighting from vintage desk lamps, Edison bulb fixtures
+Create film noir shadows with strong directional lighting
+Employ available light from neon signs, cafe windows, gallery spaces
+Analog Film Aesthetic
+Slightly underexpose to achieve that coveted film grain look
+Use warm color temperature (2700K-3200K) to mimic tungsten film stock
+Create subtle lens flares and light leaks in post-production
+Employ high contrast lighting with deep shadows and bright highlights
+## CAMERA & TECHNICAL SPECS
+
+Equipment:
+Fujifilm X-T5 or X100V (for that analog aesthetic without actual film costs)
+35mm and 50mm prime lenses only (no zooms - too clinical)
+Shoot in Fujifilm's Classic Chrome or Classic Neg film simulation modes
+Add subtle grain in post-processing
+Settings:
+Shoot wide open (f/1.4-f/2.8) for shallow DOF
+Use natural light whenever possible
+Capture in RAW but process to look like scanned film
+Slight vignetting and color grading toward warm tones
+## LOCATIONS
+
+London-Inspired Spaces:
+Monmouth Coffee Company, Borough Market - Authentic coffee culture, worn wooden surfaces
+The British Library Reading Room - Institutional minimalism meets intellectual gravitas
+Vintage record shops (Rough Trade, Sister Ray) - Analog nostalgia, cultural authenticity
+Traditional pubs with original Victorian tilework and leather banquettes
+Brutalist university libraries - Raw concrete, institutional lighting
+Brooklyn/NYC Alternatives:
+McNally Jackson Books, Nolita - Independent bookstore aesthetic
+Housing Works Bookstore - Worn, authentic, community-focused
+IFC Center lobby - Cinephile culture, vintage movie posters
+Classic diners with original booths and neon signage
+Domestic Spaces:
+Rent apartments with original hardwood floors, exposed brick
+Spaces with vintage furniture, analog objects (turntables, film cameras)
+Kitchens with subway tile, butcher block counters
+Rooms with built-in bookshelves filled with actual books
+## CLOTHING & STYLING
+
+Primary Wardrobe:
+Shetland wool sweaters in cream, navy, forest green (Sunspel, COS, Uniqlo U)
+Vintage band tees layered under cardigans or worn alone
+Classic white Oxford shirts (slightly wrinkled, lived-in)
+Cable-knit cardigans in neutral tones
+Navy peacoats or wool topcoats for outerwear
+Accessories:
+Vintage mechanical watches - visible but not ostentatious
+Wire-rim glasses or classic tortoiseshell frames
+Leather messenger bags with patina and wear
+Canvas sneakers (Converse, Vans) or worn leather boots
+Minimal gold jewelry - simple chains, signet rings
+Styling Notes:
+Nothing should look brand new - everything needs lived-in authenticity
+Mix high and low: pair vintage tees with quality knitwear
+Muted color palette: navy, cream, forest green, burgundy, charcoal
+Avoid logos, fast fashion, or overly trendy pieces
+Clothes should fit well but not be aggressively tailored
+Hair & Makeup:
+Natural, slightly tousled hair
+Minimal makeup emphasizing natural features
+Slight stubble on male subjects
+Overall aesthetic should suggest "just woke up looking effortlessly cool"
+This approach will position your note-taking app as the choice for thoughtful, creative individuals who value authenticity over flashy tech aesthetics.
+
+highriskclient intersection wordsforyoungmen
+Based on the intersection of both taste profiles, here's a comprehensive aesthetic strategy for your AI note-taker app photoshoot:
+
+## COMPOSITION STYLES
+
+Primary Approach: Contemplative Documentary Minimalism
+Candid, unstaged moments of actual app usage
+Profile shots and three-quarter angles rather than direct confrontation with camera
+Generous negative space emphasizing solitude and focus
+Architectural framing using windows, doorways, concrete elements
+Low angles that create geometric tension
+Square format compositions (reminiscent of film photography)
+Secondary Elements:
+Hands-focused macro shots showing tactile interaction with devices
+Environmental portraits where the person is small within larger architectural spaces
+Layered compositions with foreground/background depth
+*Why this works: Both profiles favor contemplative, understated imagery that avoids commercial polish in favor of authentic documentation.*
+
+## LIGHTING
+
+Natural Light Prioritized:
+Golden hour window light (warm, directional)
+Overcast daylight for even, moody illumination
+Dramatic single-source lighting creating strong shadows
+Available light in institutional/architectural spaces
+Avoid multiple light setups or obvious studio lighting
+Specific Techniques:
+Side-lit portraits emphasizing texture and depth
+Backlighting for silhouette effects
+High contrast black and white potential in all shots
+Embrace underexposure for moodiness over technical perfection
+*Why this works: Both profiles consistently favor natural, unmanipulated lighting that creates mood over commercial brightness.*
+
+## CAMERA & TECHNICAL APPROACH
+
+Film Aesthetic Priority:
+Shoot digital but grade for analog film characteristics
+Add subtle grain in post-production
+Slightly desaturated color palette
+Higher contrast, crushed blacks
+35mm and 50mm focal lengths (avoid wide-angle distortion)
+Specific Settings:
+Shallow depth of field for subject isolation
+Embrace slight motion blur for authenticity
+Allow for imperfect focus in favor of capturing genuine moments
+Square crops for Instagram, but shoot full frame
+*Why this works: Both profiles show strong preference for analog aesthetics and reject overly polished digital perfection.*
+
+## LOCATIONS
+
+Primary Locations: 1. Brutalist University Library - Concrete architecture, study spaces, institutional lighting 2. Independent Coffee Shop - Worn wooden tables, vintage fixtures, authentic patina 3. Converted Warehouse Loft - Industrial windows, minimal furnishing, natural materials 4. Traditional British Pub - Dark wood, intimate booths, authentic working-class atmosphere 5. Modern Art Gallery - White walls, minimal spaces, contemplative environment 6. Residential Apartment - Understated luxury, neutral tones, lived-in comfort
+
+Specific Environmental Elements:
+Exposed brick or concrete walls
+Large industrial windows
+Vintage furniture with visible wear
+Minimal, uncluttered spaces
+Natural materials (wood, leather, wool)
+*Why this works: Both profiles favor authentic spaces with character over sterile commercial environments.*
+
+## CLOTHING & STYLING
+
+Primary Aesthetic: Understated Sophistication
+
+For Male Subjects:
+Cream cable-knit sweaters or turtlenecks
+Well-tailored navy wool coats
+Vintage band t-shirts (worn, authentic)
+Dark denim or tailored trousers
+Leather accessories (minimal, quality)
+Classic timepieces (avoid flashy/digital)
+For Female Subjects:
+Oversized blazers in neutral tones
+Minimalist knitwear in earth tones
+High-quality basics (white tees, simple dresses)
+Vintage-inspired outerwear
+Minimal jewelry (avoid trendy pieces)
+Classic handbags (leather, structured)
+Universal Elements:
+Monochromatic color schemes
+Natural fabrics (wool, cotton, leather)
+Vintage or vintage-inspired pieces
+Avoid obvious branding or logos
+Emphasize texture and craftsmanship
+Earth tones, navy, cream, black, white
+Specific Styling Notes:
+Slightly oversized fits over tight clothing
+Layering for visual and textural interest
+Worn-in quality over pristine newness
+Mix high and low elements (luxury watch with vintage tee)
+*Why this works: Both profiles consistently favor understated luxury, authentic materials, and sophisticated minimalism over flashy trends.*
+
+## ADDITIONAL CREATIVE DIRECTION
+
+Props & Details:
+Physical notebooks alongside digital devices (emphasizing the bridge between analog and digital)
+Quality pens, vintage books
+Coffee in ceramic mugs (not branded cups)
+Analog clocks, vinyl records in background
+Tactile materials that suggest craftsmanship
+Mood & Direction:
+Capture genuine concentration and contemplation
+Avoid staged "happy user" expressions
+Emphasize the meditative quality of note-taking
+Show the app as part of a thoughtful, creative lifestyle
+Focus on the intersection of technology and human reflection
+This approach positions your AI note-taker as a sophisticated tool for thoughtful people who value both technological innovation and authentic human experience.

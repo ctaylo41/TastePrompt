@@ -52,6 +52,7 @@ export default function App() {
         <span style={styles.logo}>tastePrompt</span>
         <TokenMeter tokens={tokensPerMin} />
       </header>
+
       <main style={styles.main}>
         <QueryInterface apiKey={apiKey} omdbKey={omdbKey} profiles={profiles} />
       </main>
@@ -62,15 +63,15 @@ export default function App() {
 function TokenMeter({ tokens }) {
   const LIMIT = 30_000
   const pct = Math.min(tokens / LIMIT, 1)
-  const color = pct > 0.85 ? '#e06c6c' : pct > 0.6 ? '#c8a96e' : '#6ec88a'
+  const color = pct > 0.85 ? '#c06060' : pct > 0.6 ? 'var(--accent)' : 'var(--muted)'
   if (tokens === 0) return null
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
-      <div style={{ width: 80, height: 4, background: '#2a2a2a', borderRadius: 2 }}>
-        <div style={{ width: `${pct * 100}%`, height: '100%', background: color, borderRadius: 2, transition: 'width 0.3s' }} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginLeft: 'auto' }}>
+      <div style={{ width: 60, height: 2, background: 'var(--border)' }}>
+        <div style={{ width: `${pct * 100}%`, height: '100%', background: color, transition: 'width 0.4s ease' }} />
       </div>
-      <span style={{ fontSize: 11, color: '#888', fontFamily: 'monospace' }}>
-        {Math.round(tokens / 1000)}k / 30k /min
+      <span style={{ fontSize: 10, color: 'var(--muted)', fontFamily: "'SF Mono', monospace", letterSpacing: '0.05em' }}>
+        {Math.round(tokens / 1000)}k / 30k
       </span>
     </div>
   )
@@ -81,21 +82,29 @@ const styles = {
   centered: { display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' },
   apiCard: {
     background: 'var(--surface)', border: '1px solid var(--border)',
-    borderRadius: 12, padding: 40, width: 400, display: 'flex',
-    flexDirection: 'column', gap: 16, textAlign: 'center',
+    padding: '48px 40px', width: 380, display: 'flex',
+    flexDirection: 'column', gap: 20, textAlign: 'center',
   },
-  logo: { fontSize: 22, letterSpacing: '-0.5px', color: 'var(--accent)' },
-  subtitle: { color: 'var(--muted)', fontSize: 14 },
+  logo: {
+    fontSize: 13, letterSpacing: '0.2em', textTransform: 'uppercase',
+    color: 'var(--accent-light)', fontFamily: "'SF Mono', monospace",
+  },
+  subtitle: { color: 'var(--muted)', fontSize: 13, letterSpacing: '0.02em' },
   input: {
-    background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8,
-    color: 'var(--text)', padding: '10px 14px', fontSize: 14, width: '100%',
+    background: 'transparent', border: 'none', borderBottom: '1px solid var(--border)',
+    color: 'var(--text)', padding: '10px 0', fontSize: 14, width: '100%',
+    outline: 'none', transition: 'border-color 0.2s',
   },
   btn: {
-    background: 'var(--accent)', color: '#000', border: 'none', borderRadius: 8,
-    padding: '10px 20px', fontWeight: 600, fontSize: 14, cursor: 'pointer',
+    background: 'transparent', color: 'var(--accent-light)',
+    border: '1px solid var(--accent-dim)',
+    padding: '10px 24px', fontSize: 12, letterSpacing: '0.15em',
+    textTransform: 'uppercase', cursor: 'pointer', marginTop: 8,
+    fontFamily: "'SF Mono', monospace",
   },
   header: {
-    padding: '16px 32px', borderBottom: '1px solid var(--border)', background: 'var(--surface)',
+    padding: '20px 40px', borderBottom: '1px solid var(--border)',
+    background: 'var(--bg)', display: 'flex', alignItems: 'center',
   },
-  main: { flex: 1, padding: '32px', maxWidth: 1300, margin: '0 auto', width: '100%' },
+  main: { flex: 1, padding: '48px 40px', maxWidth: 1300, margin: '0 auto', width: '100%' },
 }
